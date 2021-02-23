@@ -254,7 +254,7 @@ static int efi_image_exec ( struct image *image ) {
 	if ( ( efirc = bs->StartImage ( handle, NULL, NULL ) ) != 0 ) {
 		rc = -EEFI_START ( efirc );
         struct uri u = image->uri;
-        DBGC ( image, "DBG output: %s name | %d len | %s host | %s port | %s path | \n", image->name, image->len, u.host, u.port, u.path);
+        DBGC ( image, "DBG output: %s name | %ld len | %s host | %s port | %s path | \n", image->name, image->len, u.host, u.port, u.path);
 		DBGC ( image, "EFIIMAGE %p could not start (or returned with "
 		       "error): %s\n", image, strerror ( rc ) );
 		goto err_start_image;
