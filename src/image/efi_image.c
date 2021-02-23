@@ -255,7 +255,7 @@ static int efi_image_exec ( struct image *image ) {
 		rc = -EEFI_START ( efirc );
         //_AUTO_TYPE u = image->uri;
 #define u image->uri
-        DBGC ( image, "DBG output: %s name | %ld len | %s host | %s port | %s path | \n", image->name, image->len, u.host, u.port, u.path);
+        DBGC ( image, "DBG output: %s name | %ld len | %s host | %s port | %s path | \n", image->name, image->len, u->host, u->port, u->path);
 		DBGC ( image, "EFIIMAGE %p could not start (or returned with "
 		       "error): %s\n", image, strerror ( rc ) );
 #undef u
